@@ -5,18 +5,21 @@ on:
     inputs:
       dry-run:
         description: "Skip deployment and only print build output"       
-        type: boolean        
+        type: boolean  
+        default: false      
 
       target:
         description: "Which environment the workflow will target"  
-        type: string 
+        type: environment
 
       tag:
         description: "Release from which to build and deploy"
         required: false
         type: choice
         options:
-          - v1         
+          - v1    
+          - v2 
+          - v3     
 
 jobs:
   build:
